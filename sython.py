@@ -39,7 +39,7 @@ sython.start()
 
 
 
-@@sython.on(events.NewMessage(pattern='\.تحديث'))
+@sython.on(events.NewMessage(pattern='\.تحديث'))
 async def update(event):
     await event.respond('جارٍ التحديث...')
     source_blob = {"url": "https://github.com/sythontm/testhk"}
