@@ -42,7 +42,8 @@ sython.start()
 @sython.on(events.NewMessage(pattern='\.تحديث'))
 async def update(event):
     await event.respond('جارٍ التحديث...')
-    app.builds().create(source_blob={"url": "https://github.com/sythontm/testhk"})
+    source_blob = {"url": "https://github.com/sythontm/testhk"}
+build = app.build(source_blob=source_blob)
     await event.respond('تم التحديث بنجاح!')
 
 @sython.on(events.NewMessage(outgoing=True, pattern=".الاوامر"))
