@@ -1,4 +1,4 @@
-
+from telethon import events 
 import telethon
 from time import sleep
 from config import *
