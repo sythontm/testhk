@@ -1,3 +1,4 @@
+import requests 
 from telethon import TelegramClient, events
 import os
 import heroku3
