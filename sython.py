@@ -12,12 +12,11 @@ sython.start()
 heroku_conn = heroku3.from_key(heroku_api_key)
 app = heroku_conn.apps()[app_name]
 
-@sython.on(events.NewMessage(pattern='\.تحديث'))
+@sython.on(events.NewMessage(outgoing=True, pattern=r"\تحديث"))
 async def update(event):
-    await event.respond('جارٍ التحديث...')
-    app.builds().create(source_blob={"url": "https://github.com/sythontm/testhk"})
-    await event.respond('تم التحديث بنجاح!')
-
+    await event.edit("- جارِ تحديث السورس ...\n- انتضر من 1-2 دقيقة")
+    await sython.disconnect()
+    await sython.send_message(event.chat_id, "- تم تحديث السـورس .. بنجـاح")
 
 @sython.on(events.NewMessage(outgoing=True, pattern=".الاوامر"))
 async def _(event):
