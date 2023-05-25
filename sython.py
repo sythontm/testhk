@@ -1,7 +1,7 @@
 
 import telethon
 from time import sleep
-
+from config import *
 import requests
 import heroku3
 
