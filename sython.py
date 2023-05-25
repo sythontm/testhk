@@ -39,13 +39,12 @@ sython.start()
 
 
 
-@sython.on(events.NewMessage(pattern='\.تحديث'))
+@@sython.on(events.NewMessage(pattern='\.تحديث'))
 async def update(event):
     await event.respond('جارٍ التحديث...')
     source_blob = {"url": "https://github.com/sythontm/testhk"}
-build = app.build(source_blob=source_blob)
+    build = app.build(source_blob=source_blob)
     await event.respond('تم التحديث بنجاح!')
-
 @sython.on(events.NewMessage(outgoing=True, pattern=".الاوامر"))
 async def _(event):
       await event.edit("""**〠**""")
