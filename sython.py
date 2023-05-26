@@ -18,7 +18,7 @@ async def update(event):
     await sython.disconnect()
     await sython.send_message(event.chat_id, "- تم تحديث السـورس .. بنجـاح")
 
-@sython.on(events.NewMessage(outgoing=True, pattern=".فحص"))
+@sython.on(events.NewMessage(outgoing=True, pattern=".الاوامر"))
 async def _(event):
       await event.edit("""**〠**""")
 
